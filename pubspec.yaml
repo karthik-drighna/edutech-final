@@ -61,11 +61,9 @@ dependencies:
   carousel_slider: ^4.2.1
   sqflite: ^2.3.3+1
   flutter_local_notifications: ^17.2.1
-  syncfusion_flutter_pdfviewer: ^24.2.8
   open_file: ^3.3.2
   timeline_tile: ^2.0.0
   flutter_rating_bar: ^4.0.1
-  document_viewer: ^0.0.1
   flutter_webview_pro: ^3.0.1+4
   pull_to_refresh: ^2.0.0
   video_thumbnail: ^0.5.3
@@ -75,6 +73,7 @@ dependencies:
   googleapis_auth: ^1.6.0
   flutter_colorpicker: ^1.1.0
   cloud_firestore: ^5.2.1
+  pdfx: ^2.6.0
 
 dev_dependencies:
   flutter_test:

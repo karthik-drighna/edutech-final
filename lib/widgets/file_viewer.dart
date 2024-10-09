@@ -1,8 +1,8 @@
 import 'dart:io';
-import 'package:document_viewer/document_viewer.dart';
+
 import 'package:drighna_ed_tech/widgets/pencil_loader/page/pencil_loader_homescreen.dart';
 import 'package:flutter/material.dart';
-import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
+import 'package:pdfx/pdfx.dart';  // Import pdfx for PDF viewing
 
 class FileViewer extends StatelessWidget {
   final String filePath;
@@ -17,7 +17,11 @@ class FileViewer extends StatelessWidget {
           centerTitle: true,
           title: const Text("PDF View"),
         ),
-        body: SfPdfViewer.file(File(filePath)),
+        body: PdfView(
+          controller: PdfController(
+            document: PdfDocument.openFile(filePath),
+          ),
+        ),
       );
     } else if (filePath.endsWith('.txt')) {
       return Scaffold(
@@ -102,7 +106,12 @@ class _DocumentViewerWithLoaderState extends State<DocumentViewerWithLoader> {
             const Center(
               child: PencilLoaderProgressBar(),
             ),
-          Expanded(flex: 1, child: DocumentViewer(filePath: widget.filePath)),
+          if (!_isLoading)
+            PdfView(
+              controller: PdfController(
+                document: PdfDocument.openFile(widget.filePath),
+              ),
+            ),
         ],
       ),
     );
