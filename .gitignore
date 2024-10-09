@@ -40,7 +40,9 @@ app.*.map.json
 # Android Studio will place build artifacts here
 /android/app/debug
 /android/app/profile
-/android/app/release
+/android/app/releasegit commit -m "Add sensitive JSON file to .gitignore"
 
+
+assets/drighnaedutech-e85ffe0318af.json
 assets/drighnaedutech-e85ffe0318af.json
 
